@@ -9,6 +9,7 @@ class StopWatch extends React.Component {
 
     this.start = this.start.bind(this);
     this.stop = this.stop.bind(this);
+    this.reset = this.reset.bind(this);
   }
 
   start() {
@@ -30,6 +31,13 @@ class StopWatch extends React.Component {
   stop() {
     clearInterval(this.timer);
     this.timer = null;
+  }
+
+  reset() {
+    this.stop();
+    this.setState({
+      timePassedInMilliSeconds: 0,
+    });
   }
 
 
